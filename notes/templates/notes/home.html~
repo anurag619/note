@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Notes app</title>
+    </head>
+
+    <body>
+        
+        <br/>
+        
+        <h3>Login to add your notes here:</h> 
+        
+        <a href="/accounts/login/">login</a><br/>
+        
+        <br/>
+        <a href="/notes/about/">About</a><br/> 
+        
+    </body>
+
+</html>

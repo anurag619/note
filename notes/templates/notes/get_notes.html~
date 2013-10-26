@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Notes app</title>
+    </head>
+
+    <body>
+        <ul>
+        <h3>{{ note.title }}</h3>
+        
+        <br/> <p>{{ note.content }}</p>
+        </ul>
+    </body>
+
+</html>

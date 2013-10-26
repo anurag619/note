@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>notes app</title>
+    </head>
+
+    <body>
+
+        {% if form.errors %}
+           <p class='error'> Sorry, that's not a valid username/password</p>
+        {% endif %}
+
+        <form action="/accounts/auth/" method="post">{% csrf_token %}
+            <label for="username"> User name:</label>
+            <input type="text" name="username" value="" id="username">
+            <label for="pasword">Password:</label>
+            <input type="password" name="password" value="" id="password">
+ 
+        </form>
+
+        
+        <br/>
+        
+        <h1>Hello, you are in the about page.</h1>
+        <p> this is test app, so dont expect much here. Please be keen on adding a note.</p> 
+        
+        <a href="/notes/home/">Home</a><br/>
+        
+    </body>
+
+</html>
