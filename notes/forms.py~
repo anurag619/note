@@ -32,10 +32,11 @@ class LoginForm(forms.Form):
     password = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False))
 
 class NoteForm(ModelForm):
-    
+    title = forms.CharField(label=(u'Note Title'))
+    content = forms.TextField(label=(u'Note'),widget=forms.Textarea)
+
     class Meta:
         model = Note
-        exclude=('author',)
 
     def clean_title(self):
         title = self.cleaned_data['title']

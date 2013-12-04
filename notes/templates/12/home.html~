@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Notes app</title>
+    </head>
+
+    <body>
+        
+        <br/>
+        
+        <h3>Login to add notes here. Or register yourself first: <a href="/notes/register/">register</a>        </h3> 
+        
+        <a href="/login/">login</a><br/>
+        
+        <br/>
+        <a href="/about/">About</a><br/> 
+        
+    </body>
+
+</html>

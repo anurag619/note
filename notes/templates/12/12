@@ -1,0 +1,7 @@
+url(r'^create/', views.create, name='create'),
+    url(r'^all_notes/', views.all_notes, name='all_notes'),
+    url(r'^get_notes/(?P<note_id>\d+)/', views.get_notes, name='get_notes'),
+    url(r'^loggedin/', views.loggedin, name='loggedin'),
+    url(r'^invalid/', views.invalid, name='invalid'),
+    url(r'^register/', views.register, name='register'),
+    url(r'^success/', views.success, name='success'),

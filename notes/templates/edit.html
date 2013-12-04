@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Notes app</title>
+    </head>
+
+    <body>
+        <p>back to <a href="/profile/"><button>profile </button></a></p>
+        <br/>
+        
+        <h3> all note </h3>
+        <br/> 
+         
+        {% for note in notes %}
+        <p> <a href="/get_notes/{{ note.id }}/">{{ note.title }}</a></p>  
+
+        <table>
+          <td>{{ n.title }}</td>
+          <td><a href="/edit/{{ note.id }}/">Edit</a></td>
+          <td><a href="/delete/{{ note.id }}/"><button>Delete</botton></a></td>
+        </table>
+        {% endfor %}
+    
+            
+    </body>
+
+</html>

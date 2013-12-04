@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>notes app</title>
+    </head>
+
+    <body>
+        
+        <h1>Hello, you can now add/edit/delete your notes</h1>
+
+        <form action="/create/" method="post"> {% csrf_token %}
+        <table>
+        {% for field in note_form %}
+        <div class="fieldWrapper">
+            <tr>
+            <td>{{ field.errors }}</td>
+            <td>{{ field.label_tag }}: {{ field }}</td>
+        </tr>
+        </div>
+        {% endfor %}
+    </table>
+        <p><input type="submit" value="add note" /></p>
+        </form>
+
+        <table>
+
+          <td><a href="/logout/"><button>logout </button></a></td>
+          <td><a href="/profile/"><button>profile </button></a></td>
+          
+        </table>
+
+
+    
+    
+    </body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Notes app</title>
+    </head>
+
+    <body>
+        
+        <br/>
+        
+        <h3> all note </h3>
+        <br/> 
+         {% for note in notes %}
+        <div>
+        <p> <a href="/get_notes/{{ note.id }}/">{{ note.title }}</a></p>
+        
+        </div>
+        {% endfor %}    
+             
+    </body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Notes app</title>
+    </head>
+
+    <body>
+        {% for form in notes %}
+    	
+    	<form method="get">{% csrf_token %}
+            {{ form }}
+        <input type="submit" value="Submit" />
+
+        {% endfor %}
+        </form>

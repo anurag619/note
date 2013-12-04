@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>notes app</title>
+    </head>
+
+    <body>
+        
+        <br/>
+        
+        <h1>Hello, you can now add your note</h1>
+
+        <form action="/create/" method="post">{% csrf_token %}
+        
+        {{form}}
+  
+        <input type="submit" name="submit" value="create note">
+        </form>
+    </body>
+
+</html>
