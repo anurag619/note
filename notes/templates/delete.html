@@ -8,11 +8,15 @@
 
     <body>
 
-		<form method="get">{% csrf_token %}
-    		Are you sure you want to delete "{{ object.name }}" ?
-    	<input type="submit" value="Submit" />
+		<form method="post">{% csrf_token %}
+    		Are you sure you want to delete "{{ note.title }}" ?
+    	<input type="submit" value="yes" />
 		</form>
+
+		<a href="/all_notes/"><button>No</button></a>
 
 </body>
 
 </html>
+
+

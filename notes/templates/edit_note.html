@@ -3,15 +3,17 @@
 <html>
 
     <head>
-        <title>Notes app</title>
+        <title>edit Notes app</title>
     </head>
 
     <body>
-        {% for form in notes %}
-    	
-    	<form method="get">{% csrf_token %}
-            {{ form }}
-        <input type="submit" value="Submit" />
+        
 
-        {% endfor %}
-        </form>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+
+</body>
+
+</html>

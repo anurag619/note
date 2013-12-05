@@ -10,7 +10,7 @@
         <p>back to <a href="/profile/"><button>profile </button></a></p>
         <br/>
         
-        <h3> all note </h3>
+        <u><h3> all notes </h3></u>
         <br/> 
          
         {% for note in notes %}
@@ -18,8 +18,8 @@
 
         <table>
           <td>{{ n.title }}</td>
-          <td><a href="/edit/{{ note.id }}/">Edit</a></td>
-          <td><a href="/delete/{{ note.id }}/"><button>Delete</botton></a></td>
+          <td><a href="/edit/{{ note.id }}/"><button>Edit</button></a></td>
+          <td><a href="/delete/{{ note.id }}/"><button>Delete</button></a></td>
         </table>
         {% endfor %}
     

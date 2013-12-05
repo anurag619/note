@@ -7,10 +7,12 @@
     </head>
 
     <body>
-            <p>Please login to add a note.</p>
-        
 
-        <form action="/login/" method="post">{% csrf_token %}
+        {% if form.errors %}
+           <p class='error'> Sorry, that's not a valid username/password</p>
+        {% endif %}
+
+        <form action="/auth_view/" method="post">{% csrf_token %}
             <label for="username"> User name:</label>
             <input type="text" name="username" value="" id="username"/>
             <label for="pasword">Password:</label>

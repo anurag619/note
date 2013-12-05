@@ -12,8 +12,6 @@ from django.template import RequestContext
 from models import Student, Note
 
 
-
-
 def index(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect(reverse(Profile))
@@ -91,30 +89,21 @@ def create(request):
     return render_to_response('create.html', args) 
 
 @login_required
-def edit_note(request,note_id):
-    e = Note.objects.get(pk=note_id)
-    form = NoteForm(request.GET, instance=e)
+def edit_note(request,note_id, template_name='edit_note.html'):
+    e = get_object_or_404(Note, pk=note_id)
+    form = NoteForm(request.POST or None, instance=e)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/all_notes')
 
-#def server_update(request, pk, template_name='servers/server_form.html'):
- #   server = get_object_or_404(Server, pk=pk)
-  #  form = ServerForm(request.POST or None, instance=server)
-   # if form.is_valid():
-    #    form.save()
-     #   return redirect('server_list')
-    #return render(request, template_name, {'form':form})
-    
+    return render(request, template_name, {'form':form})
 
-
-    return render_to_response('edit_note.html',{'notes': Note.objects.filter(id=note_id).update()})
-
- #   
-    #return render_to_response(request, template_name, {'form': form})
-
-#Entry.objects.filter(pub_date__year=2007).update(headline='Everything is the same')
-    
+    #def server_update(request, pk, template_name='servers/server_form.html'):
+    #e = Note.objects.get(pk=note_id)
+    #form = NoteForm(request.GET, instance=e)
+    #if form.is_valid():
+        #form.save()
+        
 @login_required
 def all_notes(request):
     return render_to_response('edit.html',{'notes': Note.objects.all()})
@@ -125,16 +114,10 @@ def get_notes(request,note_id=1):
         return HttpResponseRedirect(reverse(login_user))
     return render_to_response('get_notes.html',{'all_note': Note.objects.get(id=note_id)})
 
-def delete(request,note_id):
-    d= get_object_or_404(Note, note_id=p)    
-    if request.method=='GET':
+def delete(request,note_id, template_name='delete.html'):
+    d= get_object_or_404(Note, pk=note_id)    
+    if request.method=='POST':
         d.delete()
-        return HttpResponseRedirect('/edit')
-    return render_to_response(request, delete.html, {'note':note_id})
-
-
-
-
-
-
+        return HttpResponseRedirect('/all_notes')
+    return render(request, template_name, {'note':d})
 

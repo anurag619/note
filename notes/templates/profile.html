@@ -13,7 +13,7 @@
         <h2>Profile</h2>
 
         {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+            <p>Welcome, {{ user.username }}.  ({{ user.id }}) Thanks for logging in.</p>
         {% else %}
 
         {% endif %}
