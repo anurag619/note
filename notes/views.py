@@ -105,8 +105,8 @@ def edit_note(request,note_id, template_name='edit_note.html'):
         #form.save()
         
 @login_required
-def all_notes(request):
-    return render_to_response('edit.html',{'notes': Note.objects.all()})
+def all_notes(request, username):
+    return render_to_response('edit.html',{'notes': Note.objects.get(username)})
 
 
 def get_notes(request,note_id=1):

@@ -11,6 +11,8 @@ class Student(models.Model):
 
 class Note(models.Model):
     
+    username=models.OneToOneField(Student, primary_key=True)
+    
     title = models.CharField(max_length=100)
     content = models.TextField()
     created = models.DateTimeField(auto_now=True)
